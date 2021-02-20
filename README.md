@@ -6,8 +6,11 @@ This is a project that I created for my Advanced Data Structures and Algorithms 
 # Sample Output
 Make sure the program is compiled first by running the 'make' command; the object file will be 'dict'.
 ```console
+your_bash:~$ make
+g++ -std=c++11 -c -Wall -g main.cpp
+g++ -std=c++11 -c -Wall -g Dictionary.cpp
+g++ -o dict main.o Dictionary.o
 your_bash:~$ ./dict
-
 ```
 ![Alt text](https://github.com/MalikCoderGreen/dictionary_with_spellchecker/blob/main/Picture1.png?raw=true "Dictionary program screenshot")
 
