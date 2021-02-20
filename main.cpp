@@ -14,12 +14,6 @@
 *
 */
 
-
-
-
-
-
-
 int main(){
 
 	std::cout << "SpellChecker Program \n";
@@ -82,15 +76,6 @@ int main(){
 	std::cout << "Number of misspelled words = " << miss << std::endl;  
 	std::cout << "Number of suggestions = " << sugg << std::endl;
 	std::cout << "Time required to find suggestions = " << elapsed_seconds.count() << std::endl;
-
-
-
-
-
-
-
-
-
 
 
 	return 0;
