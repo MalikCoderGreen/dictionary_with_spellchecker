@@ -46,6 +46,9 @@ Dictionary::Dictionary(){
 	}
 }
 
+/*
+Function to record lookup time for statistical output.
+*/
 double Dictionary::getTime(){
 
 	auto start = std::chrono::system_clock::now();
@@ -59,7 +62,9 @@ double Dictionary::getTime(){
 }
 
 
-
+/*
+Create unique hash key for dictionary words.
+*/
 size_t Dictionary::hash_f(size_t u){
 
 	size_t w = 30;
@@ -77,7 +82,9 @@ int Dictionary::getDictSize(){
 	return size;
 }
 
-
+/*
+Insert words from dictionary object into the hash table.
+*/
 void Dictionary::insert(std::string word){
 
 	size_t numWord[word.length()];
@@ -106,13 +113,18 @@ void Dictionary::insert(std::string word){
 	hash[index] = x;
 	if(x->next){
 		x->next->prev = x;
-	} /*		
-			hash[index] = x;
-
-			hash[index]->key = word;	  	
-	   */
+	} 
 }
 
+/*
+Below are functions that record various bucket sizes within the hash table: 
+biggestBucket()
+smallestBucket()
+avgBucketSize()
+bucketSize()
+*/
+//BUCKET GETTER FUNCTIONS.
+//************************************************************************
 size_t Dictionary::biggestBucket(){
 
 	size_t maxBucket = 0;
@@ -203,8 +215,12 @@ size_t Dictionary::bucketSize(){
 	return bSize;
 
 }
+//************************************************************************
 
-
+/*
+Function to check if the given word by the user is in the hash table. 
+If it isn't, oneEdit() will be called to show words that are one edit distance away.
+*/
 void Dictionary::checkText(std::string text, int &misspelled, int &suggestions){
 
 	bool isIn = false;
@@ -231,7 +247,9 @@ void Dictionary::checkText(std::string text, int &misspelled, int &suggestions){
 		std::cout << text << " is in the dictionary!\n\n";
 }
 
-
+/*
+Function to show words that are one edit distance away from the given word. 
+*/
 void Dictionary::oneEdit(std::string text, int &misspelled, int &suggestions){
 	
 	misspelled++;
